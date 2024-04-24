@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* *{
+    --cor-de-fundo: 3839C;
+    --cor-de-hover:
+} */
+
+body{
+    min-height: 100vh; /* 100% da viewpor height // determinar que o body deve ocupar toda a página*/
+    background-color: azure;
+}
+
+.menu-navegação{
+    height: 65px; /*Tamanho da altura da nav*/
+    background-color: #38393C; /*Cor de funco da nav*/
+}
+
+.logo-menu{
+    display: flex;
+    background-color: #38393C;
+    height: 65px;
+    justify-content: space-between;
+}
+
+.logo span{
+    color: azure;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    margin-inline-start: 2.5rem;
+}
+
+/*Elemento filho ">" da nav */
+
+.menu-navegação>ul{
+    height: 100%; /*ocupar todo o espaço do elemento pai*/
+    display: flex;
+    justify-content: flex-end; /*Qual a diferença entre "end" e "flex-end"?*/
+    /*gap: 2rem; Espaçamento entre itens // cada rem = 16px */
+    margin-inline-end: 1.5rem;
+}
+
+/*Elemento descendente " " da nav */
+.menu-navegação a{
+    display: inline-flex; /*Flex irá permitir adicionar o align-items*/
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem; /*120% do tamanho padrão 1 rem*/
+    font-family: "Jersey 25", sans-serif;
+    color:azure;
+    padding: 0 2rem; /* '0' em cima e embaixo e '1rem' para as laterais */
+}
+
+/* Ativação de pseudo-classe*/
+.menu-navegação a:hover{
+    background-color: azure;
+    color: #38393C;
+    transition: 300ms; /* 300 miliseguntods*/
+    /* font-weight: 600; */
+}
+
+.breadcrumbs{
+    height: 50px;
+}
+
+.breadcrumbs>ul{
+    height: 100%;
+    display: flex;
+    margin-inline-start: 1.5rem; /*espaçamento no início*/
+}
+
+.breadcrumbs li {
+    display:inline-flex;
+    align-items: center;
+    height: 100%;
+}
+
+/*pseudo-classe é chamado por ":" e pseudo-elemento é chamdado por "::" */
+/*pseudo-classe ":last-child -> último filho"  ":not() -> para não aplicar"*/
+/*pseudo-elemento "::after" para inserir o ">" após o elemento */
+
+.breadcrumbs li:not(:last-child)::after{
+    content:">";
+}
+
+.bradcrumbs a{
+    /*display: inline-flex; /*Flex irá permitir adicionar o aling-items*/
+    /*align-items: center; */
+    /*height: 100%; */
+    padding: 0 1rem;
+    font-family: sans-serif;
+    /*text-decoration: nome; */
+    /*color: #777;*/
+    /*text-transform: capitalize;*/
+}
+
+.breadcrumbs li:not(:last-child)>a{
+    color:#777;
+}
+
+.breadcrumbs li:last-child>a{
+    background-color: #38393C;
+    color: azure;
+    padding: 6px;
+    border-radius: 1rem;
+    margin-inline-start: 8px;
+}
+
+.breadcrumbs a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.breadcrumbs li:last-child>a:hover{
+    text-decoration: none;
+    cursor: default;
+}
